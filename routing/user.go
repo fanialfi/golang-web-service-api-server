@@ -65,9 +65,10 @@ func User(w http.ResponseWriter, r *http.Request) {
 				w.Write(result)
 				return
 			}
-			http.Error(w, "User Not Found", http.StatusNotFound)
-			return // keluar dari function
 		}
+
+		http.Error(w, "User Not Found", http.StatusNotFound)
+		return // keluar dari function
 	} else {
 		http.Error(w, "", http.StatusBadRequest)
 		return
